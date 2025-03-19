@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 import "./App.css";
+import MediaCard from "./components/MediaCard";
 
 function App() {
   return (
     <>
-      <h1 className="bg-green-500">wal</h1>
+     <MediaCard/>
     </>
   );
 }
