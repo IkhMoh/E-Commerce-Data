@@ -1,12 +1,11 @@
-import { useState } from "react";
 
 import "./App.css";
-import MediaCard from "./components/MediaCard";
+import Product from "./components/Product";
 
 function App() {
   return (
     <>
-     <MediaCard/>
+     <Product/>
     </>
   );
 }
