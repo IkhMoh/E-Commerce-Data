@@ -82,7 +82,7 @@ export default function Product() {
           <CardActions>
             <ShoppingCartIcon color="secondary" />
           </CardActions>
-        </Card>{" "}
+        </Card>
       </Container>
     </div>
   );

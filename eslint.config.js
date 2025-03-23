@@ -12,13 +12,13 @@ export default [
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: { jsx: true }, 
         sourceType: 'module',
       },
     },
     plugins: {
       'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      'react-refresh': reactRefresh, 
     },
     rules: {
       ...js.configs.recommended.rules,
