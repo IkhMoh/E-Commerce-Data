@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
-
+ 
 export default function Product() {
   return (
     <div className="">
