@@ -8,6 +8,6 @@ function App() {
      <Product/>
     </> 
   );
-} 
+} o
  
 export default App;
