@@ -6,6 +6,8 @@ function App() {
   return (
     <>
      <Product/>
+     <Product/>
+     <Product/>
     </> 
   );
 } o
