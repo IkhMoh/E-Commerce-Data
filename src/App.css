@@ -1,2 +1,6 @@
 @import "tailwindcss";
-    
+@font-face {
+  font-family: Rubik;
+  src: url("/public/fonts/Rubik/Rubik-Regular.ttf");
+  
+}

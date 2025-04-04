@@ -1,15 +1,20 @@
-
 import "./App.css";
-import Product from "./components/Product";
 
+import Product from "./components/Product";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+const theme = createTheme({
+  Typography: {
+    fontFamily: ["Rubik"],
+  },
+});
 function App() {
   return (
     <>
-     <Product/>
-     <Product/>
-     <Product/>
-    </> 
+      <ThemeProvider theme={theme}>
+        <Product />
+      </ThemeProvider>
+    </>
   );
-} o
- 
+}
+
 export default App;
