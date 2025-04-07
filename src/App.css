@@ -1,16 +1,16 @@
 @import "tailwindcss";
 @font-face {
   font-family: Rubik;
-  src: url("/public/fonts/Rubik/Rubik-Regular.ttf");
+  src: url("/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: Rubik;
-  src: url("/public/fonts/Rubik/Rubik-Regular.ttf");
+  src: url("/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: Rubik;
-  src: url("/public/fonts/Rubik/Rubik-Regular.ttf");
+  src: url("/fonts/Rubik/Rubik-Regular.ttf");
   font-weight: 600;
 }
