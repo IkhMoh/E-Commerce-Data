@@ -9,7 +9,7 @@ import Container from "@mui/material/Container";
 export default function Product({ product }) {
   console.log(product);
   return (
-    <div className="bg-amber-100">
+    <div  className="bg-amber-100">
       <Card sx={{ maxWidth: 255, maxHeight: 455 }}>
         <CardMedia
           sx={{ height: 180 }}
