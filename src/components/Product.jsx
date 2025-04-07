@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
-
+import Button from "@mui/material/Button";
 export default function Product({ product }) {
   console.log(product);
   return (
@@ -24,10 +24,10 @@ export default function Product({ product }) {
             {product.description}
           </Typography>
         </CardContent>
-        {/* <CardActions>
+        <CardActions>
             <Button size="small">Share</Button>
             <Button size="small">Learn More</Button>
-          </CardActions> */}
+          </CardActions>
       </Card>
     </div>
   );
