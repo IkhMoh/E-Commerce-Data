@@ -25,7 +25,7 @@ const Products = () => {
 
   return (
     <main>
-      <Container maxWidth="xl">
+      <Container maxWidth="">
         {productsData.map((product) => (
           <Product key={product.id} product={product} />
         ))}
