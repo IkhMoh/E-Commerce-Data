@@ -25,10 +25,17 @@ const Products = () => {
 
   return (
     <main>
-      <Container maxWidth="">
-        {productsData.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+      <Container maxWidth="lg">
+        <h1 className="text-5xl font-bold  py-5">Products:</h1>
+        <Grid
+          container
+          spacing={2}
+          className="flex items-center justify-center"
+        >
+          {productsData.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </Grid>
       </Container>
     </main>
   );
