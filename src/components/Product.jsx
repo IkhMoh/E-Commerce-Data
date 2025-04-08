@@ -7,6 +7,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+
 export default function Product({ product }) {
   return (
     <div className="bg-amber-100">
@@ -17,25 +18,29 @@ export default function Product({ product }) {
           title={product.title}
         />
         <CardContent>
-          <Typography
-            className="font-bold"
-            gutterBottom
-            variant="h6"
-            component="div"
-          >
-            {product.title}
-          </Typography>
-          <Typography
-            className="overflow-auto h-12"
-            variant="body6"
-            sx={{ color: "text.secondary" }}
-          >
-            {product.description}
-          </Typography>
+          <div className="overflow-hidden h-8">
+            <Typography
+              className="font-bold"
+              gutterBottom
+              variant="h6"
+              component="div"
+            >
+              {product.title}
+            </Typography>
+          </div>
+          <div className="overflow-hidden h-24">
+            <Typography variant="body6" sx={{ color: "text.secondary" }}>
+              {product.description}
+            </Typography>
+          </div>
         </CardContent>
-        <CardActions>
-          <AddShoppingCartIcon />
+        <CardActions className="flex justify-between items-center">
+          <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
+            Buy
+          </Button>
+          <AddShoppingCartIcon className="cursor-pointer"/>
         </CardActions>
+        ;
       </Card>
     </div>
   );

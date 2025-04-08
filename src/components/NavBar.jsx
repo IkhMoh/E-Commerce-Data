@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
-
+import { Link } from "react-router";
 // icons  //
 import SearchIcon from "@mui/icons-material/Search";
 import StoreIcon from "@mui/icons-material/Store";
@@ -54,15 +54,17 @@ export default function SearchAppBar() {
   return (
     <AppBar position="static" className=" h-14 flex justify-center">
       <Toolbar className="flex justify-between items-center space-x-3 bg-amber-500">
-        <typography
-          variant="h1"
-          noWrap
-          component="div"
-          className="flex items-center cursor-pointer"
-        >
-          <StoreIcon className="text-amber-600" />
-          <span className="text-amber-400 font-bold">Vav</span>Store
-        </typography>
+        <Link to="/">
+          <typography
+            variant="h1"
+            noWrap
+            component="div"
+            className="flex items-center cursor-pointer"
+          >
+            <StoreIcon className="text-amber-600" />
+            <span className="text-amber-400 font-bold">Vav</span>Store
+          </typography>
+        </Link>
         <Search>
           <SearchIconWrapper>
             <SearchIcon />
@@ -70,13 +72,13 @@ export default function SearchAppBar() {
           <StyledInputBase
             placeholder="Search…"
             inputProps={{ "aria-label": "search" }}
-            
           />
         </Search>
-
-        <Badge badgeContent={4} color="secondary">
-          <LocalGroceryStoreIcon />
-        </Badge>
+        <Link to="/Carts">
+          <Badge badgeContent={4} color="secondary">
+            <LocalGroceryStoreIcon />
+          </Badge>
+        </Link>
       </Toolbar>
     </AppBar>
   );
