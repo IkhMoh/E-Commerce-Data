@@ -6,9 +6,9 @@ import Container from "@mui/material/Container";
 import { useState, useEffect } from "react";
 let cancelGet = null;
 const Products = () => {
-  const [productsData, setProductsData] = useState([]);
-  useEffect(() => {
-    axios
+  const [productsData, setProductsData] = useState(["j", "k", "l", "m"]);
+  const getProducts = async () => {
+    await axios
       .get("https://dummyjson.com/products", {
         cancelToken: new axios.CancelToken((c) => {
           cancelGet = c;
@@ -21,6 +21,9 @@ const Products = () => {
     return () => {
       cancelGet();
     };
+  };
+  useEffect(() => {
+    getProducts();
   }, []);
 
   return (

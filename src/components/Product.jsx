@@ -7,7 +7,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 export default function Product({ product }) {
-  console.log(product);
   return (
     <div className="bg-amber-100">
       <Card sx={{ width: 255, height: 415 }}>
@@ -17,17 +16,26 @@ export default function Product({ product }) {
           title={product.title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            className="font-bold"
+            gutterBottom
+            variant="h6"
+            component="div"
+          >
             {product.title}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography
+            className="overflow-auto h-12"
+            variant="body6"
+            sx={{ color: "text.secondary" }}
+          >
             {product.description}
           </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
       </Card>
     </div>
   );
