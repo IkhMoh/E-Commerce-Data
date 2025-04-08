@@ -2,8 +2,13 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
+import Badge from "@mui/material/Badge";
+
+// icons  //
 import SearchIcon from "@mui/icons-material/Search";
-import StoreIcon from '@mui/icons-material/Store';
+import StoreIcon from "@mui/icons-material/Store";
+import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+// === icons === //
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -37,9 +42,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     [theme.breakpoints.up("sm")]: {
-      width: "30ch",
+      width: "40ch",
       "&:focus": {
-        width: "45ch",
+        width: "50ch",
       },
     },
   },
@@ -47,10 +52,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <typography variant="h1" noWrap component="div" sx={{ flexGrow: 1 }}>
-          <StoreIcon className="text-amber-600"/>
+    <AppBar position="static" className=" h-14 flex justify-center">
+      <Toolbar className="flex justify-between items-center space-x-3 bg-amber-500">
+        <typography
+          variant="h1"
+          noWrap
+          component="div"
+          className="flex items-center cursor-pointer"
+        >
+          <StoreIcon className="text-amber-600" />
           <span className="text-amber-400 font-bold">Vav</span>Store
         </typography>
         <Search>
@@ -60,8 +70,13 @@ export default function SearchAppBar() {
           <StyledInputBase
             placeholder="Search…"
             inputProps={{ "aria-label": "search" }}
+            
           />
         </Search>
+
+        <Badge badgeContent={4} color="secondary">
+          <LocalGroceryStoreIcon />
+        </Badge>
       </Toolbar>
     </AppBar>
   );
