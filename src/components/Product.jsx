@@ -8,7 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { Link } from "react-router";
-export default function Product({ product }) {
+export default function Product({ product, handelAddClick }) {
   return (
     <div className="bg-amber-100">
       <Card sx={{ width: 255, height: 415 }}>
@@ -42,7 +42,9 @@ export default function Product({ product }) {
               Buy
             </Button>
           </Link>
-          <AddShoppingCartIcon className="cursor-pointer" />
+          <div onClick={() =>{handelAddClick(product.id)} }>
+            <AddShoppingCartIcon className="cursor-pointer" />
+          </div>
         </CardActions>
         ;
       </Card>

@@ -22,6 +22,10 @@ const Products = () => {
       cancelGet();
     };
   };
+  const handelAddClick = (id) => {
+    console.log(id)
+  };
+  const handelRemoveClick = (id) => {};
   useEffect(() => {
     getProducts();
   }, []);
@@ -36,7 +40,11 @@ const Products = () => {
           className="flex items-center justify-center"
         >
           {productsData.map((product) => (
-            <Product key={product.id} product={product} />
+            <Product
+              key={product.id}
+              product={product}
+              handelAddClick={handelAddClick}
+            />
           ))}
         </Grid>
       </Container>

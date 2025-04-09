@@ -6,12 +6,42 @@ import ProductDetails from "./components/ProductDetails";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router";
 import Pay from "./components/pay";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const theme = createTheme({
   typography: {
     fontFamily: "Rubik",
   },
 });
+let cancelGet = null;
+
 function App() {
+  // the API is not working =================================
+
+  // const [CartsData, setCartData] = useState(["j", "k", "l", "m"]);
+  // const getCart = async () => {
+  //   await axios
+  //     .get("https://dummyjson.com/carts/2", {
+  //       cancelToken: new axios.CancelToken((c) => {
+  //         cancelGet = c;
+  //       }),
+  //     })
+  //     .then((response) => {
+  //       setCartData(response);
+  //     })
+  //     .catch((error) => {});
+  //   return () => {
+  //     cancelGet();
+  //   };
+  // };
+
+  // useEffect(() => {
+  //   getCart();
+  // }, []);
+
+ // the API is not working =================================
+
+
   return (
     <div>
       <ThemeProvider theme={theme}>
