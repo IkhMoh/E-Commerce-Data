@@ -5,8 +5,8 @@ import Product from "./Product";
 import Container from "@mui/material/Container";
 import { useState, useEffect } from "react";
 let cancelGet = null;
-const Products = () => {
-  const [productsData, setProductsData] = useState(["j", "k", "l", "m"]);
+const Products = ({ setCartsData, cartsData }) => {
+  const [productsData, setProductsData] = useState([]);
   const getProducts = async () => {
     await axios
       .get("https://dummyjson.com/products", {
@@ -23,9 +23,13 @@ const Products = () => {
     };
   };
   const handelAddClick = (id) => {
-    console.log(id)
+    {
+      productsData.map((product) =>
+        product.id === id ? setCartsData([...cartsData, product]) : product
+      );
+    }
   };
-  const handelRemoveClick = (id) => {};
+  
   useEffect(() => {
     getProducts();
   }, []);

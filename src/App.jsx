@@ -7,15 +7,15 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router";
 import Pay from "./components/pay";
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 const theme = createTheme({
   typography: {
     fontFamily: "Rubik",
   },
 });
-let cancelGet = null;
-
+// console.log(cartsData);
 function App() {
+  const [cartsData, setCartsData] = useState([]);
   // the API is not working =================================
 
   // const [CartsData, setCartData] = useState(["j", "k", "l", "m"]);
@@ -39,18 +39,22 @@ function App() {
   //   getCart();
   // }, []);
 
- // the API is not working =================================
-
+  // the API is not working =================================
 
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <NavBar />
+        <NavBar cartsData={cartsData} />
 
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route
+            path="/"
+            element={
+              <Products setCartsData={setCartsData} cartsData={cartsData} />
+            }
+          />
           <Route path="/Details" element={<ProductDetails />} />
-          <Route path="/Carts" element={<Carts />} />
+          <Route path="/Carts" element={<Carts cartsData={cartsData} setCartsData={setCartsData} />} />
           <Route path="/pay" element={<Pay />} />
         </Routes>
       </ThemeProvider>

@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export default function NavBar({ cartsData }) {
   return (
     <AppBar position="static" className=" h-14 flex justify-center">
       <Toolbar className="flex justify-between items-center space-x-3 bg-amber-500">
@@ -75,7 +75,7 @@ export default function SearchAppBar() {
           />
         </Search>
         <Link to="/Carts">
-          <Badge badgeContent={4} color="secondary">
+          <Badge badgeContent={Object.keys(cartsData).length} color="secondary">
             <LocalGroceryStoreIcon />
           </Badge>
         </Link>
