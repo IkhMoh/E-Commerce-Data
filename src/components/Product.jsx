@@ -10,9 +10,9 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router";
 export default function Product({ product }) {
   return (
-    <Link to="/Details">
-      <div className="bg-amber-100">
-        <Card sx={{ width: 255, height: 415 }}>
+    <div className="bg-amber-100">
+      <Card sx={{ width: 255, height: 415 }}>
+        <Link to="/Details">
           <CardMedia
             sx={{ height: 190 }}
             image={product.thumbnail}
@@ -35,15 +35,17 @@ export default function Product({ product }) {
               </Typography>
             </div>
           </CardContent>
-          <CardActions className="flex justify-between items-center">
+        </Link>
+        <CardActions className="flex justify-between items-center">
+          <Link to="/pay">
             <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
               Buy
             </Button>
-            <AddShoppingCartIcon className="cursor-pointer" />
-          </CardActions>
-          ;
-        </Card>
-      </div>
-    </Link>
+          </Link>
+          <AddShoppingCartIcon className="cursor-pointer" />
+        </CardActions>
+        ;
+      </Card>
+    </div>
   );
 }
