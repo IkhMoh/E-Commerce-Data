@@ -20,68 +20,70 @@ const Carts = ({ cartsData, setCartsData }) => {
     setCartsData(cartsData.filter((product) => product.id !== id));
   };
   return (
-    <Container maxWidth="lg">
-      <h1 className="text-5xl font-bold  py-5">Carts:</h1>
-      <div className="flex justify-start ">
-        <Grid container spacing={2} className="flex justify-center">
-          {cartsData.map((product) => (
-            <div key={product.id} className="bg-amber-100">
-              <Card sx={{ width: 255, height: 415 }}>
-                <CardMedia
-                  sx={{ height: 190 }}
-                  image={product.thumbnail}
-                  title={product.title}
-                />
-                <CardContent>
-                  <div className="overflow-hidden h-8">
-                    <Typography
-                      className="font-bold"
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                    >
-                      {product.title}
-                    </Typography>
-                  </div>
-                  <div className="overflow-hidden h-28">
-                    <Typography
-                      variant="body6"
-                      sx={{ color: "text.secondary" }}
-                    >
-                      {product.description}
-                    </Typography>
-                  </div>
-                </CardContent>
-                <CardActions className="flex justify-between">
-                  <div className="flex  ">
-                    <Button
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setCount(count - 1)}
-                    >
-                      <RemoveIcon />
-                    </Button>
-                    <h1 className="mx-1 font-bold h-8 w-8 text-center text-sky-500">
-                      {count}
-                    </h1>
-                    <Button
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setCount(count + 1)}
-                    >
-                      <AddIcon />
-                    </Button>
-                  </div>
-                  <div onClick={() => handelRemoveClick(product.id)}>
-                    <DeleteIcon color="error" className="cursor-pointer" />
-                  </div>
-                </CardActions>
-              </Card>
-            </div>
-          ))}
-        </Grid>
-      </div>
-    </Container>
+    <div className="bg-amber-100 h-lvh">
+      <Container maxWidth="lg">
+        <h1 className="text-5xl font-bold  py-5">Carts:</h1>
+        <div className="flex justify-start ">
+          <Grid container spacing={2} className="flex justify-center">
+            {cartsData.map((product) => (
+              <div key={product.id} className="bg-amber-100">
+                <Card sx={{ width: 255, height: 415 }}>
+                  <CardMedia
+                    sx={{ height: 190 }}
+                    image={product.thumbnail}
+                    title={product.title}
+                  />
+                  <CardContent>
+                    <div className="overflow-hidden h-8">
+                      <Typography
+                        className="font-bold"
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                      >
+                        {product.title}
+                      </Typography>
+                    </div>
+                    <div className="overflow-hidden h-28">
+                      <Typography
+                        variant="body6"
+                        sx={{ color: "text.secondary" }}
+                      >
+                        {product.description}
+                      </Typography>
+                    </div>
+                  </CardContent>
+                  <CardActions className="flex justify-between">
+                    <div className="flex  ">
+                      <Button
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setCount(count - 1)}
+                      >
+                        <RemoveIcon />
+                      </Button>
+                      <h1 className="mx-1 font-bold h-8 w-8 text-center text-sky-500">
+                        {count}
+                      </h1>
+                      <Button
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setCount(count + 1)}
+                      >
+                        <AddIcon />
+                      </Button>
+                    </div>
+                    <div onClick={() => handelRemoveClick(product.id)}>
+                      <DeleteIcon color="error" className="cursor-pointer" />
+                    </div>
+                  </CardActions>
+                </Card>
+              </div>
+            ))}
+          </Grid>
+        </div>
+      </Container>
+    </div>
   );
 };
 

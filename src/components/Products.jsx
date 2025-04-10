@@ -35,7 +35,7 @@ const Products = ({ setCartsData, cartsData }) => {
   }, []);
 
   return (
-    <main>
+    <main className="bg-amber-100 min-h-screen">
       <Container maxWidth="lg">
         <h1 className="text-5xl font-bold  py-5">Products:</h1>
         <Grid
