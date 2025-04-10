@@ -20,8 +20,8 @@ const productDetails = () => {
   const { product } = location.state || {};
   console.log(product); // Destructure the product from state
   return (
-    <div>
-      <div key={product.id} className="bg-amber-100">
+    <div className="bg-amber-100 h-lvh" >
+      <div key={product.id} >
         <Card sx={{ width: 255, height: 415 }}>
           <CardMedia
             sx={{ height: 190 }}

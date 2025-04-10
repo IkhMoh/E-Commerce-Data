@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router";
 export default function Product({ product, handelAddClick }) {
   return (
-    <div className="bg-amber-100">
+    <div className="bg-amber-100 ">
       <Card sx={{ width: 255, height: 415 }}>
         <Link to="/Details" state={{ product }}>
           <CardMedia
