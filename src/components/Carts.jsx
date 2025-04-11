@@ -28,13 +28,13 @@ const Carts = ({ cartsData, setCartsData }) => {
           <Grid container spacing={2} className="flex justify-center">
             {cartsData.map((product) => (
               <div key={product.id} className="bg-white shadow-lg ">
-                <div  className="h-fit w-64 rounded-lg">
+                <div className="h-fit w-64 rounded-lg">
                   <Typography className="px-2 flex flex-col justify-evenly">
-                  <CardMedia
-                    sx={{ height: 220 }}
-                    image={product.thumbnail}
-                    title={product.title}
-                  />
+                    <CardMedia
+                      sx={{ height: 220 }}
+                      image={product.thumbnail}
+                      title={product.title}
+                    />
                     <div className="overflow-hidden h-8">
                       <Typography
                         className="font-bold"
@@ -54,12 +54,13 @@ const Carts = ({ cartsData, setCartsData }) => {
                     </div>
                     <div className="h-fit flex flex-col justify-around ">
                       <div className="font-extrabold ">
-                        {product.price * count}$
-                      </div>
-                      <div className="">
-                        <span className="font-extrabold bg-gray-100 py-0.5 px-1.5  rounded-lg">
-                          {product.stock}
+                        <span className="text-2xl">
+                          {Math.floor(product.price) * count}
                         </span>
+                        .99$
+                      </div>
+                      <div className="font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg">
+                        {product.stock}
                         in stock{" "}
                       </div>
                     </div>
