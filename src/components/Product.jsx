@@ -35,8 +35,13 @@ export default function Product({ product, handelAddClick }) {
                 <span className="text-2xl">{price}</span>.99$
               </div>
               <div className="font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg">
-                {product.stock}
-                in stock{" "}
+                <span
+                  className={
+                    product.stock > 0 ? "text-green-700" : "text-red-500"
+                  }
+                >
+                  {product.stock} in stock
+                </span>
               </div>
             </div>
           </Link>
