@@ -19,6 +19,7 @@ const Carts = ({ cartsData, setCartsData }) => {
   const handelRemoveClick = (id) => {
     setCartsData(cartsData.filter((product) => product.id !== id));
   };
+  // const price = product.price * count;
   return (
     <div className="bg-amber-100 h-lvh">
       <Container maxWidth="lg">
@@ -26,25 +27,24 @@ const Carts = ({ cartsData, setCartsData }) => {
         <div className="flex justify-start ">
           <Grid container spacing={2} className="flex justify-center">
             {cartsData.map((product) => (
-              <div key={product.id} className="bg-amber-100">
-                <Card sx={{ width: 255, height: 415 }}>
+              <div key={product.id} className="bg-white shadow-lg ">
+                <div  className="h-fit w-64 rounded-lg">
+                  <Typography className="px-2 flex flex-col justify-evenly">
                   <CardMedia
-                    sx={{ height: 190 }}
+                    sx={{ height: 220 }}
                     image={product.thumbnail}
                     title={product.title}
                   />
-                  <CardContent>
                     <div className="overflow-hidden h-8">
                       <Typography
                         className="font-bold"
-                        gutterBottom
                         variant="h6"
                         component="div"
                       >
                         {product.title}
                       </Typography>
                     </div>
-                    <div className="overflow-hidden h-28">
+                    <div className="overflow-hidden h-12">
                       <Typography
                         variant="body6"
                         sx={{ color: "text.secondary" }}
@@ -52,32 +52,43 @@ const Carts = ({ cartsData, setCartsData }) => {
                         {product.description}
                       </Typography>
                     </div>
-                  </CardContent>
-                  <CardActions className="flex justify-between">
-                    <div className="flex  ">
-                      <Button
-                        color="secondary"
-                        variant="outlined"
-                        onClick={() => setCount(count - 1)}
-                      >
-                        <RemoveIcon />
-                      </Button>
-                      <h1 className="mx-1 font-bold h-8 w-8 text-center text-sky-500">
-                        {count}
-                      </h1>
-                      <Button
-                        color="secondary"
-                        variant="outlined"
-                        onClick={() => setCount(count + 1)}
-                      >
-                        <AddIcon />
-                      </Button>
+                    <div className="h-fit flex flex-col justify-around ">
+                      <div className="font-extrabold ">
+                        {product.price * count}$
+                      </div>
+                      <div className="">
+                        <span className="font-extrabold bg-gray-100 py-0.5 px-1.5  rounded-lg">
+                          {product.stock}
+                        </span>
+                        in stock{" "}
+                      </div>
                     </div>
-                    <div onClick={() => handelRemoveClick(product.id)}>
-                      <DeleteIcon color="error" className="cursor-pointer" />
-                    </div>
-                  </CardActions>
-                </Card>
+                    <CardActions className="flex justify-between">
+                      <div className="flex  ">
+                        <Button
+                          color="secondary"
+                          variant="outlined"
+                          onClick={() => setCount(count - 1)}
+                        >
+                          <RemoveIcon />
+                        </Button>
+                        <h1 className="mx-1 font-bold h-8 w-8 text-center text-sky-500">
+                          {count}
+                        </h1>
+                        <Button
+                          color="secondary"
+                          variant="outlined"
+                          onClick={() => setCount(count + 1)}
+                        >
+                          <AddIcon />
+                        </Button>
+                      </div>
+                      <div onClick={() => handelRemoveClick(product.id)}>
+                        <DeleteIcon color="error" className="cursor-pointer" />
+                      </div>
+                    </CardActions>
+                  </Typography>
+                </div>
               </div>
             ))}
           </Grid>

@@ -15,6 +15,7 @@ const Products = ({ setCartsData, cartsData }) => {
         }),
       })
       .then((response) => {
+        console.log(response)
         setProductsData(response.data.products);
       })
       .catch((error) => {});

@@ -10,44 +10,49 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router";
 export default function Product({ product, handelAddClick }) {
   return (
-    <div className="bg-amber-100 ">
-      <Card sx={{ width: 255, height: 415 }}>
-        <Link to="/Details" state={{ product }}>
+    <div key={product.id} className="bg-white shadow-lg ">
+      <div className="h-fit w-64 rounded-lg">
+        <Typography className="px-2 flex flex-col justify-evenly">
           <CardMedia
-            sx={{ height: 190 }}
+            sx={{ height: 220 }}
             image={product.thumbnail}
             title={product.title}
           />
-          <CardContent>
-            <div className="overflow-hidden h-8">
-              <Typography
-                className="font-bold"
-                gutterBottom
-                variant="h6"
-                component="div"
-              >
-                {product.title}
-              </Typography>
-            </div>
-            <div className="overflow-hidden h-24">
-              <Typography variant="body6" sx={{ color: "text.secondary" }}>
-                {product.description}
-              </Typography>
-            </div>
-          </CardContent>
-        </Link>
-        <CardActions className="flex justify-between items-center">
-          <Link to="/pay">
-            <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
-              Buy
-            </Button>
-          </Link>
-          <div onClick={() =>{handelAddClick(product.id)} }>
-            <AddShoppingCartIcon className="cursor-pointer" />
+          <div className="overflow-hidden h-8">
+            <Typography className="font-bold" variant="h6" component="div">
+              {product.title}
+            </Typography>
           </div>
-        </CardActions>
-        ;
-      </Card>
+          <div className="overflow-hidden h-12">
+            <Typography variant="body6" sx={{ color: "text.secondary" }}>
+              {product.description}
+            </Typography>
+          </div>
+          <div className="h-fit flex flex-col justify-around ">
+            <div className="font-extrabold ">{product.price}$</div>
+            <div className="">
+              <span className="font-extrabold bg-gray-100 py-0.5 px-1.5  rounded-lg">
+                {product.stock}
+              </span>
+              in stock{" "}
+            </div>
+          </div>
+          <CardActions className="flex justify-between items-center">
+            <Link to="/pay">
+              <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
+                Buy
+              </Button>
+            </Link>
+            <div
+              onClick={() => {
+                handelAddClick(product.id);
+              }}
+            >
+              <AddShoppingCartIcon className="cursor-pointer" />
+            </div>
+          </CardActions>
+        </Typography>
+      </div>
     </div>
   );
 }
