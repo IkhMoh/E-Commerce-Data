@@ -25,11 +25,11 @@ const productDetails = () => {
   const hi = " hi there";
   return (
     <div className="bg-amber-100 h-lvh">
-      <div key={product.id} className="flex justify-start px-5 pt-12 h-2/3 ">
+      <div key={product.id} className="flex justify-start px-5 pt-6 md:pt-12 h-fit ">
         <div className=" flex h-3/3 bg-white rounded-lg shadow-md p-4 ">
-          <Typography component="div" className="px-2 flex">
+          <Typography component="div" className="px-2 md:flex">
             <CardMedia
-              sx={{ height: 400, width: 400 }}
+              className="h-[200px]  md:h-[400px] w-full md:w-[350px]"
               image={product.thumbnail}
               title={product.title}
             />
@@ -39,18 +39,18 @@ const productDetails = () => {
                   {product.title}
                 </Typography>
               </div>
-              <div className="mt-5">
+              <div className="mt-1 md:mt-5">
                 <Typography variant="body6" sx={{ color: "text.secondary" }}>
                   {product.description}
                 </Typography>
               </div>
-              <div className="h-fit flex flex-col justify-around mt-5 ">
+              <div className="h-fit flex flex-col justify-around mt-1 md:mt-5 ">
                 <div className="font-extrabold ">
                   <span className="text-2xl">{price}</span>.99$
                 </div>
                 <div
                   className={
-                    "font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg mt-5"
+                    "font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg mt-1 md:mt-5"
                   }
                 >
                   <span
@@ -63,7 +63,7 @@ const productDetails = () => {
                 </div>
                 <div
                   className={
-                    "font-extrabold  py-0.5 px-1.5 w-fit rounded-lg mt-5 space-x-2"
+                    "font-extrabold  py-0.5 px-1.5 w-fit rounded-lg mt-1 md:mt-5 space-x-2"
                   }
                 >
                   {product.tags.map((element, index) => (
@@ -72,7 +72,7 @@ const productDetails = () => {
                 </div>
               </div>
 
-              <CardActions className="flex justify-between items-end mt-10">
+              <CardActions className="flex justify-between items-end mt-3 md:mt-10">
                 <Link to="/pay">
                   <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
                     Buy
