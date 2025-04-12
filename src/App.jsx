@@ -13,7 +13,7 @@ const theme = createTheme({
     fontFamily: "Rubik",
   },
 });
-// console.log(cartsData);
+
 function App() {
   const [cartsData, setCartsData] = useState([]);
   // the API is not working =================================

@@ -21,10 +21,10 @@ const productDetails = () => {
   const location = useLocation();
   const { product } = location.state || {};
   const price = `${Math.floor(product.price)}`;
-  console.log(product); // Destructure the product from state
-  const hi = " hi there";
+  
+  
   return (
-    <div className="bg-amber-100 h-lvh">
+    <div className="bg-[#f2f2f2] h-lvh">
       <div key={product.id} className="flex justify-start px-5 pt-6 md:pt-12 h-fit ">
         <div className=" flex h-3/3 bg-white rounded-lg shadow-md p-4 ">
           <Typography component="div" className="px-2 md:flex">

@@ -13,8 +13,8 @@ import { grey } from "@mui/material/colors";
 export default function Pay() {
   const greya = grey[900]; // #f44336
   return (
-    <main className="bg-amber-100 flex justify-center items-center h-screen">
-      <Card className="max-w-80 max-h-96">
+    <main className="bg-[#dfd8ce] flex justify-center items-center h-screen">
+      <Card className="max-w-80 max-h-96 bg-[#f2f2f2]">
         <div  className="font-bold mx-1 text-2xl">
           my account :
         </div>
@@ -37,7 +37,7 @@ export default function Pay() {
         <hr className="mt-2"></hr>
         <CardContent>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            If you like this app, please give it a star on GitHub!
+            If you like this app, give it a star on GitHub!
           </Typography>
         </CardContent>
         <CardActions disableSpacing className="flex justify-end items-center">

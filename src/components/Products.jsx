@@ -15,7 +15,7 @@ const Products = ({ setCartsData, cartsData }) => {
         }),
       })
       .then((response) => {
-        console.log(response)
+       
         setProductsData(response.data.products);
       })
       .catch((error) => {});
@@ -36,7 +36,7 @@ const Products = ({ setCartsData, cartsData }) => {
   }, []);
 
   return (
-    <main className="bg-amber-100 min-h-screen">
+    <main className="bg-[#dfd8ce] min-h-screen">
       <Container maxWidth="lg">
         <h1 className="text-5xl font-bold  py-5">Products:</h1>
         <Grid

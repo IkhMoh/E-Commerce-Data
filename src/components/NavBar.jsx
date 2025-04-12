@@ -5,11 +5,13 @@ import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { Link } from "react-router";
 import Typography from "@mui/material/Typography";
+import { grey } from "@mui/material/colors";
 // icons  //
 import SearchIcon from "@mui/icons-material/Search";
 import StoreIcon from "@mui/icons-material/Store";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 // === icons === //
+ 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -23,6 +25,7 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
+  border: "2px solid #845c4c",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -51,18 +54,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const hi = grey[900]
 export default function NavBar({ cartsData }) {
   return (
     <AppBar position="static" className=" h-14 flex justify-center">
-      <Toolbar className="flex justify-between items-center space-x-3 bg-amber-500">
+      <Toolbar className="flex justify-between items-center space-x-1 bg-[#dfd8ce] shadow-md text-black">
         <Typography
           noWrap
           component={Link}
           to="/"
-          className="flex items-center cursor-pointer"
+          className="flex items-center cursor-pointer pr-6 "
         >
-          <StoreIcon className="text-amber-600" />
-          <span className="text-amber-400 font-bold">Vav</span>Store
+          <StoreIcon className="text-[#c9aca6]" />
+          <span className="text-[#845c4c] font-bold">Vav</span>Store
         </Typography>
 
         <Search>
@@ -75,8 +79,8 @@ export default function NavBar({ cartsData }) {
           />
         </Search>
         <Link to="/Carts">
-          <Badge badgeContent={Object.keys(cartsData).length} color="secondary">
-            <LocalGroceryStoreIcon />
+          <Badge badgeContent={Object.keys(cartsData).length} color="warning">
+            <LocalGroceryStoreIcon className="text-[#845c4c]" />
           </Badge>
         </Link>
       </Toolbar>

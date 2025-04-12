@@ -21,13 +21,13 @@ const Carts = ({ cartsData, setCartsData }) => {
   };
   // const price = product.price * count;
   return (
-    <div className="bg-amber-100 h-lvh">
+    <div className="bg-[#dfd8ce] min-h-lvh">
       <Container maxWidth="lg">
         <h1 className="text-5xl font-bold  py-5">Carts:</h1>
         <div className="flex justify-start ">
           <Grid container spacing={2} className="flex justify-center">
             {cartsData.map((product) => (
-              <div key={product.id} className="bg-white shadow-lg ">
+              <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
                 <div className="h-fit w-64 rounded-lg">
                   <Typography component="div" className="px-2 flex flex-col justify-evenly">
                     <CardMedia
@@ -63,7 +63,7 @@ const Carts = ({ cartsData, setCartsData }) => {
                         <span
                           className={
                             product.stock > 0
-                              ? "text-green-700"
+                              ? "text-green-800"
                               : "text-red-500"
                           }
                         >
@@ -74,17 +74,17 @@ const Carts = ({ cartsData, setCartsData }) => {
                     <CardActions className="flex justify-between">
                       <div className="flex  ">
                         <Button
-                          color="secondary"
+                          color="black"
                           variant="outlined"
                           onClick={() => setCount(count - 1)}
                         >
                           <RemoveIcon />
                         </Button>
-                        <h1 className="mx-1 font-bold h-8 w-8 text-center text-sky-500">
+                        <h1 className="mx-1 font-bold h-8 w-8 text-center text-[#845c4c]">
                           {count}
                         </h1>
                         <Button
-                          color="secondary"
+                         color="black"
                           variant="outlined"
                           onClick={() => setCount(count + 1)}
                         >
@@ -92,7 +92,7 @@ const Carts = ({ cartsData, setCartsData }) => {
                         </Button>
                       </div>
                       <div onClick={() => handelRemoveClick(product.id)}>
-                        <DeleteIcon color="error" className="cursor-pointer" />
+                        <DeleteIcon   className="cursor-pointer text-[#845c4c]" />
                       </div>
                     </CardActions>
                   </Typography>

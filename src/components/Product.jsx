@@ -8,10 +8,12 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { Link } from "react-router";
+import {grey} from "@mui/material/colors";
+const greya = grey[900]; // #f44336
 export default function Product({ product, handelAddClick }) {
   const price = `${Math.floor(product.price)}`;
   return (
-    <div key={product.id} className="bg-white shadow-lg ">
+    <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
       <div className="h-fit w-64 rounded-lg">
         <Typography component="div"  className="px-2 flex flex-col justify-evenly">
           <Link to="/Details" state={{ product }}>
@@ -37,7 +39,7 @@ export default function Product({ product, handelAddClick }) {
               <div className="font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg">
                 <span
                   className={
-                    product.stock > 0 ? "text-green-700" : "text-red-500"
+                    product.stock > 0 ? "text-green-800" : "text-red-500"
                   }
                 >
                   {product.stock} in stock
@@ -47,7 +49,7 @@ export default function Product({ product, handelAddClick }) {
           </Link>
           <CardActions className="flex justify-between items-center">
             <Link to="/pay">
-              <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
+              <Button color={greya} variant="outlined" endIcon={<AddShoppingCartIcon className="text-[#845c4c]"/>} className="border-2 px-2">
                 Buy
               </Button>
             </Link>
@@ -56,7 +58,7 @@ export default function Product({ product, handelAddClick }) {
                 handelAddClick(product.id);
               }}
             >
-              <AddShoppingCartIcon className="cursor-pointer" />
+              <AddShoppingCartIcon className="cursor-pointer text-[#845c4c] "/>
             </div>
           </CardActions>
         </Typography>
