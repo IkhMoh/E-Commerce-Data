@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { Link } from "react-router";
+import Typography from "@mui/material/Typography";
 // icons  //
 import SearchIcon from "@mui/icons-material/Search";
 import StoreIcon from "@mui/icons-material/Store";
@@ -54,17 +55,16 @@ export default function NavBar({ cartsData }) {
   return (
     <AppBar position="static" className=" h-14 flex justify-center">
       <Toolbar className="flex justify-between items-center space-x-3 bg-amber-500">
-        <Link to="/">
-          <typography
-            variant="h1"
-            noWrap
-            component="div"
-            className="flex items-center cursor-pointer"
-          >
-            <StoreIcon className="text-amber-600" />
-            <span className="text-amber-400 font-bold">Vav</span>Store
-          </typography>
-        </Link>
+        <Typography
+          noWrap
+          component={Link}
+          to="/"
+          className="flex items-center cursor-pointer"
+        >
+          <StoreIcon className="text-amber-600" />
+          <span className="text-amber-400 font-bold">Vav</span>Store
+        </Typography>
+
         <Search>
           <SearchIconWrapper>
             <SearchIcon />

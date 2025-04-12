@@ -13,7 +13,7 @@ export default function Product({ product, handelAddClick }) {
   return (
     <div key={product.id} className="bg-white shadow-lg ">
       <div className="h-fit w-64 rounded-lg">
-        <Typography className="px-2 flex flex-col justify-evenly">
+        <Typography component="div"  className="px-2 flex flex-col justify-evenly">
           <Link to="/Details" state={{ product }}>
             <CardMedia
               sx={{ height: 220 }}

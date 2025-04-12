@@ -29,7 +29,7 @@ const Carts = ({ cartsData, setCartsData }) => {
             {cartsData.map((product) => (
               <div key={product.id} className="bg-white shadow-lg ">
                 <div className="h-fit w-64 rounded-lg">
-                  <Typography className="px-2 flex flex-col justify-evenly">
+                  <Typography component="div" className="px-2 flex flex-col justify-evenly">
                     <CardMedia
                       sx={{ height: 220 }}
                       image={product.thumbnail}

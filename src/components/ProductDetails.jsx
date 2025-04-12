@@ -13,7 +13,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import Chip from "@mui/material/Chip";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -22,11 +22,12 @@ const productDetails = () => {
   const { product } = location.state || {};
   const price = `${Math.floor(product.price)}`;
   console.log(product); // Destructure the product from state
+  const hi = " hi there";
   return (
     <div className="bg-amber-100 h-lvh">
       <div key={product.id} className="flex justify-start px-5 pt-12 h-2/3 ">
         <div className=" flex h-3/3 bg-white rounded-lg shadow-md p-4 ">
-          <Typography className="px-2 flex">
+          <Typography component="div" className="px-2 flex">
             <CardMedia
               sx={{ height: 400, width: 400 }}
               image={product.thumbnail}
@@ -60,9 +61,18 @@ const productDetails = () => {
                     {product.stock} in stock
                   </span>
                 </div>
+                <div
+                  className={
+                    "font-extrabold  py-0.5 px-1.5 w-fit rounded-lg mt-5 space-x-2"
+                  }
+                >
+                  {product.tags.map((element, index) => (
+                    <Chip key={index} label={element} />
+                  ))}
+                </div>
               </div>
 
-              <CardActions className="flex justify-between items-end mt-20">
+              <CardActions className="flex justify-between items-end mt-10">
                 <Link to="/pay">
                   <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
                     Buy
