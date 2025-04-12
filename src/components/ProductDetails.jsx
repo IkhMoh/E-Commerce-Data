@@ -1,32 +1,24 @@
 import { Link, useLocation } from "react-router";
 import React from "react";
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import DeleteIcon from "@mui/icons-material/Delete";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid2";
-import Badge from "@mui/material/Badge";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Chip from "@mui/material/Chip";
-import { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+
 const productDetails = () => {
   const location = useLocation();
   const { product } = location.state || {};
   const price = `${Math.floor(product.price)}`;
-  
-  
+
   return (
-    <div className="bg-[#f2f2f2] h-lvh">
-      <div key={product.id} className="flex justify-start px-5 pt-6 md:pt-12 h-fit ">
-        <div className=" flex h-3/3 bg-white rounded-lg shadow-md p-4 ">
+    <div className="bg-[#dfd8ce] h-lvh">
+      <div
+        key={product.id}
+        className="flex justify-start px-5 pt-6 md:pt-12 h-fit "
+      >
+        <div className=" flex h-3/3 bg-[#f2f2f2] rounded-lg shadow-md p-4 ">
           <Typography component="div" className="px-2 md:flex">
             <CardMedia
               className="h-[200px]  md:h-[400px] w-full md:w-[350px]"

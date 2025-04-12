@@ -1,15 +1,10 @@
 import React from "react";
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid2";
-import Badge from "@mui/material/Badge";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
@@ -29,7 +24,10 @@ const Carts = ({ cartsData, setCartsData }) => {
             {cartsData.map((product) => (
               <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
                 <div className="h-fit w-64 rounded-lg">
-                  <Typography component="div" className="px-2 flex flex-col justify-evenly">
+                  <Typography
+                    component="div"
+                    className="px-2 flex flex-col justify-evenly"
+                  >
                     <CardMedia
                       sx={{ height: 220 }}
                       image={product.thumbnail}
@@ -84,7 +82,7 @@ const Carts = ({ cartsData, setCartsData }) => {
                           {count}
                         </h1>
                         <Button
-                         color="black"
+                          color="black"
                           variant="outlined"
                           onClick={() => setCount(count + 1)}
                         >
@@ -92,7 +90,7 @@ const Carts = ({ cartsData, setCartsData }) => {
                         </Button>
                       </div>
                       <div onClick={() => handelRemoveClick(product.id)}>
-                        <DeleteIcon   className="cursor-pointer text-[#845c4c]" />
+                        <DeleteIcon className="cursor-pointer text-[#845c4c]" />
                       </div>
                     </CardActions>
                   </Typography>

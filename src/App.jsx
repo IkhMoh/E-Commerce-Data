@@ -6,7 +6,7 @@ import ProductDetails from "./components/ProductDetails";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router";
 import Pay from "./components/pay";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const theme = createTheme({
   typography: {
@@ -54,7 +54,12 @@ function App() {
             }
           />
           <Route path="/Details" element={<ProductDetails />} />
-          <Route path="/Carts" element={<Carts cartsData={cartsData} setCartsData={setCartsData} />} />
+          <Route
+            path="/Carts"
+            element={
+              <Carts cartsData={cartsData} setCartsData={setCartsData} />
+            }
+          />
           <Route path="/pay" element={<Pay />} />
         </Routes>
       </ThemeProvider>

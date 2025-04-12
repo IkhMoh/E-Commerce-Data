@@ -1,21 +1,20 @@
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { Link } from "react-router";
-import {grey} from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 const greya = grey[900]; // #f44336
 export default function Product({ product, handelAddClick }) {
   const price = `${Math.floor(product.price)}`;
   return (
     <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
       <div className="h-fit w-64 rounded-lg">
-        <Typography component="div"  className="px-2 flex flex-col justify-evenly">
+        <Typography
+          component="div"
+          className="px-2 flex flex-col justify-evenly"
+        >
           <Link to="/Details" state={{ product }}>
             <CardMedia
               sx={{ height: 220 }}
@@ -49,7 +48,12 @@ export default function Product({ product, handelAddClick }) {
           </Link>
           <CardActions className="flex justify-between items-center">
             <Link to="/pay">
-              <Button color={greya} variant="outlined" endIcon={<AddShoppingCartIcon className="text-[#845c4c]"/>} className="border-2 px-2">
+              <Button
+                color={greya}
+                variant="outlined"
+                endIcon={<AddShoppingCartIcon className="text-[#845c4c]" />}
+                className="border-2 px-2"
+              >
                 Buy
               </Button>
             </Link>
@@ -58,7 +62,7 @@ export default function Product({ product, handelAddClick }) {
                 handelAddClick(product.id);
               }}
             >
-              <AddShoppingCartIcon className="cursor-pointer text-[#845c4c] "/>
+              <AddShoppingCartIcon className="cursor-pointer text-[#845c4c] " />
             </div>
           </CardActions>
         </Typography>
