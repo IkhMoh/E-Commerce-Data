@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid2";
 import axios from "axios";
 import Product from "./Product";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 let cancelGet = null;
 const Products = ({ setCartsData, cartsData }) => {
@@ -15,10 +16,11 @@ const Products = ({ setCartsData, cartsData }) => {
         }),
       })
       .then((response) => {
-       
         setProductsData(response.data.products);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        return error;
+      });
     return () => {
       cancelGet();
     };
@@ -30,7 +32,7 @@ const Products = ({ setCartsData, cartsData }) => {
       );
     }
   };
-  
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -38,10 +40,12 @@ const Products = ({ setCartsData, cartsData }) => {
   return (
     <main className="bg-[#C9B194] min-h-screen">
       <Container maxWidth="lg">
-        <h1 className="text-5xl font-bold  py-5">Products:</h1>
+        <Typography component="div" variant="h3" className=" py-5">
+          Products:
+        </Typography>
         <Grid
           container
-          spacing={2}
+          spacing={1}
           className="flex items-center justify-center"
         >
           {productsData.map((product) => (

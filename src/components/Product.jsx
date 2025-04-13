@@ -9,8 +9,8 @@ const greya = grey[900]; // #f44336
 export default function Product({ product, handelAddClick }) {
   const price = `${Math.floor(product.price)}`;
   return (
-    <div key={product.id} className="bg-[#FAF1E6] shadow-lg ">
-      <div className="h-fit w-64 rounded-lg">
+    <div key={product.id} className="bg-[#FAF1E6] shadow-lg rounded-md">
+      <div className="h-fit w-64 ">
         <Typography
           component="div"
           className="px-2 flex flex-col justify-evenly"
