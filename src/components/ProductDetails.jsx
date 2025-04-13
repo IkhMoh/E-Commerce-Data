@@ -23,7 +23,7 @@ const productDetails = () => {
             <CardMedia
               className="h-[200px]  md:h-[400px] w-full md:w-[350px]"
               image={product.thumbnail}
-              title={product.title}
+              title={product.title} 
             />
             <div className="flex flex-col ">
               <div className="">
