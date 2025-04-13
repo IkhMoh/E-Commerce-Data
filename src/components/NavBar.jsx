@@ -5,12 +5,12 @@ import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { Link } from "react-router";
 import Typography from "@mui/material/Typography";
-import { grey } from "@mui/material/colors";
 import Container from "@mui/material/Container";
 // icons  //
 import SearchIcon from "@mui/icons-material/Search";
 import StoreIcon from "@mui/icons-material/Store";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+
 // === icons === //
 
 const Search = styled("div")(({ theme }) => ({
@@ -55,12 +55,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const hi = grey[900];
-export default function NavBar({ cartsData }) {
+export default function NavBar({ cartsData, productSearch, setProductSearch }) {
   return (
     <div className=" h-14 bg-[#C9B194] flex justify-center items-center ">
       <Container maxWidth="lg" className="">
-        <AppBar position="static" className=" h-14 flex justify-center rounded-md" color="[#dfd8ce]">
+        <AppBar
+          position="static"
+          className=" h-14 flex justify-center rounded-md"
+          color="[#dfd8ce]"
+        >
           <Toolbar className="flex justify-between items-center space-x-1 rounded-md bg-[#dfd8ce] shadow-md text-black">
             <Typography
               noWrap
@@ -79,6 +82,10 @@ export default function NavBar({ cartsData }) {
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
+                value={productSearch}
+                onChange={(e) => {
+                  setProductSearch(e.target.value);
+                }}
               />
             </Search>
             <Link to="/Carts">

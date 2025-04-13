@@ -6,11 +6,11 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 let cancelGet = null;
-const Products = ({ setCartsData, cartsData }) => {
+const Products = ({ setCartsData, cartsData,productSearch }) => {
   const [productsData, setProductsData] = useState([]);
   const getProducts = async () => {
     await axios
-      .get("https://dummyjson.com/products", {
+      .get(`https://dummyjson.com/products/search?q=${productSearch}`, {
         cancelToken: new axios.CancelToken((c) => {
           cancelGet = c;
         }),
@@ -35,7 +35,7 @@ const Products = ({ setCartsData, cartsData }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [productSearch]);
 
   return (
     <main className="bg-[#C9B194] min-h-screen">

@@ -16,6 +16,7 @@ const theme = createTheme({
 
 function App() {
   const [cartsData, setCartsData] = useState([]);
+  const [productSearch,setProductSearch] = useState("");
   // the API is not working =================================
 
   // const [CartsData, setCartData] = useState(["j", "k", "l", "m"]);
@@ -44,13 +45,13 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <NavBar cartsData={cartsData} />
+        <NavBar cartsData={cartsData} productSearch={productSearch} setProductSearch={setProductSearch}/>
 
         <Routes>
           <Route
             path="/"
             element={
-              <Products setCartsData={setCartsData} cartsData={cartsData} />
+              <Products setCartsData={setCartsData} cartsData={cartsData} productSearch={productSearch}/>
             }
           />
           <Route path="/Details" element={<ProductDetails />} />

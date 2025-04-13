@@ -38,7 +38,7 @@ export default function Product({ product, handelAddClick }) {
               <div className="font-extrabold bg-gray-200 py-0.5 px-1.5 w-fit rounded-lg">
                 <span
                   className={
-                    product.stock > 0 ? "text-green-800" : "text-red-500"
+                    product.stock > 0 ? "text-green-800" : "text-red-800"
                   }
                 >
                   {product.stock} in stock
