@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 let cancelGet = null;
-const Products = ({ setCartsData, cartsData,productSearch }) => {
+const Products = ({ setCartsData, cartsData, productSearch }) => {
   const [productsData, setProductsData] = useState([]);
   const getProducts = async () => {
     await axios
@@ -40,9 +40,12 @@ const Products = ({ setCartsData, cartsData,productSearch }) => {
   return (
     <main className="bg-[#C9B194] min-h-screen">
       <Container maxWidth="lg">
-        <Typography component="div" variant="h3" className=" py-5">
-          Products:
-        </Typography>
+        <div className="flex   justify-between items-center">
+          <Typography component="div" variant="h3" className=" py-5">
+            Products:{}
+          </Typography>
+          <Typography variant="h5">{productsData.length}</Typography>
+        </div>
         <Grid
           container
           spacing={1}

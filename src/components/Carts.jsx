@@ -18,9 +18,13 @@ const Carts = ({ cartsData, setCartsData }) => {
   return (
     <div className="bg-[#C9B194] min-h-lvh">
       <Container maxWidth="lg">
-        <Typography component="div" variant="h3" className=" py-5">
-          Carts:
-        </Typography>
+        <div className="flex   justify-between items-center">
+          <Typography component="div" variant="h3" className=" py-5">
+            Carts:
+          </Typography>
+          <Typography variant="h5">{cartsData.length}</Typography>
+        </div>
+
         <div className="flex justify-center sm:justify-start ">
           <Grid container spacing={2} className="flex justify-center">
             {cartsData.map((product) => (
