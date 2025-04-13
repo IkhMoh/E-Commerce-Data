@@ -58,10 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar({ cartsData, productSearch, setProductSearch }) {
   return (
     <div className=" h-14 bg-[#C9B194] flex justify-center items-center ">
-      <Container maxWidth="lg" className="">
+       
         <AppBar
-          position="static"
-          className=" h-14 flex justify-center rounded-md"
+          position="fixed"
+          className=" h-14 flex justify-center rounded-sm"
           color="[#dfd8ce]"
         >
           <Toolbar className="flex justify-between items-center space-x-1 rounded-md bg-[#dfd8ce] shadow-md text-black">
@@ -98,7 +98,7 @@ export default function NavBar({ cartsData, productSearch, setProductSearch }) {
             </Link>
           </Toolbar>
         </AppBar>
-      </Container>
+      
     </div>
   );
 }
