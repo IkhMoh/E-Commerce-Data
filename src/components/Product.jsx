@@ -9,7 +9,7 @@ const greya = grey[900]; // #f44336
 export default function Product({ product, handelAddClick }) {
   const price = `${Math.floor(product.price)}`;
   return (
-    <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
+    <div key={product.id} className="bg-[#FAF1E6] shadow-lg ">
       <div className="h-fit w-64 rounded-lg">
         <Typography
           component="div"
@@ -35,7 +35,7 @@ export default function Product({ product, handelAddClick }) {
               <div className="font-extrabold ">
                 <span className="text-2xl">{price}</span>.99$
               </div>
-              <div className="font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg">
+              <div className="font-extrabold bg-gray-200 py-0.5 px-1.5 w-fit rounded-lg">
                 <span
                   className={
                     product.stock > 0 ? "text-green-800" : "text-red-500"

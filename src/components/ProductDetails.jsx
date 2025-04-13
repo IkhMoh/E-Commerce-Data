@@ -13,12 +13,12 @@ const productDetails = () => {
   const price = `${Math.floor(product.price)}`;
 
   return (
-    <div className="bg-[#dfd8ce] h-lvh">
+    <div className="bg-[#C9B194] h-lvh">
       <div
         key={product.id}
         className="flex justify-start px-5 pt-6 md:pt-12 h-fit "
       >
-        <div className=" flex h-3/3 bg-[#f2f2f2] rounded-lg shadow-md p-4 ">
+        <div className=" flex h-3/3 bg-[#FAF1E6] rounded-lg shadow-md p-4 ">
           <Typography component="div" className="px-2 md:flex">
             <CardMedia
               className="h-[200px]  md:h-[400px] w-full md:w-[350px]"
@@ -42,7 +42,7 @@ const productDetails = () => {
                 </div>
                 <div
                   className={
-                    "font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg mt-1 md:mt-5"
+                    "font-extrabold bg-gray-200 py-0.5 px-1.5 w-fit rounded-lg mt-1 md:mt-5"
                   }
                 >
                   <span

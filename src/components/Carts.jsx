@@ -16,13 +16,13 @@ const Carts = ({ cartsData, setCartsData }) => {
   };
   // const price = product.price * count;
   return (
-    <div className="bg-[#dfd8ce] min-h-lvh">
+    <div className="bg-[#C9B194] min-h-lvh">
       <Container maxWidth="lg">
         <h1 className="text-5xl font-bold  py-5">Carts:</h1>
-        <div className="flex justify-start ">
+        <div className="flex justify-center sm:justify-start ">
           <Grid container spacing={2} className="flex justify-center">
             {cartsData.map((product) => (
-              <div key={product.id} className="bg-[#f2f2f2] shadow-lg ">
+              <div key={product.id} className="bg-[#FAF1E6] shadow-lg ">
                 <div className="h-fit w-64 rounded-lg">
                   <Typography
                     component="div"
@@ -57,7 +57,7 @@ const Carts = ({ cartsData, setCartsData }) => {
                         </span>
                         .99$
                       </div>
-                      <div className="font-extrabold bg-gray-100 py-0.5 px-1.5 w-fit rounded-lg">
+                      <div className="font-extrabold bg-gray-200 py-0.5 px-1.5 w-fit rounded-lg">
                         <span
                           className={
                             product.stock > 0

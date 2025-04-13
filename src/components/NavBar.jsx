@@ -6,12 +6,13 @@ import Badge from "@mui/material/Badge";
 import { Link } from "react-router";
 import Typography from "@mui/material/Typography";
 import { grey } from "@mui/material/colors";
+import Container from "@mui/material/Container";
 // icons  //
 import SearchIcon from "@mui/icons-material/Search";
 import StoreIcon from "@mui/icons-material/Store";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 // === icons === //
- 
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -54,36 +55,43 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const hi = grey[900]
+const hi = grey[900];
 export default function NavBar({ cartsData }) {
   return (
-    <AppBar position="static" className=" h-14 flex justify-center">
-      <Toolbar className="flex justify-between items-center space-x-1 bg-[#dfd8ce] shadow-md text-black">
-        <Typography
-          noWrap
-          component={Link}
-          to="/"
-          className="flex items-center cursor-pointer pr-6 "
-        >
-          <StoreIcon className="text-[#c9aca6]" />
-          <span className="text-[#845c4c] font-bold">Vav</span>Store
-        </Typography>
+    <div className=" h-14 bg-[#C9B194] flex justify-center items-center ">
+      <Container maxWidth="lg" className="">
+        <AppBar position="static" className=" h-14 flex justify-center rounded-md" color="[#dfd8ce]">
+          <Toolbar className="flex justify-between items-center space-x-1 rounded-md bg-[#dfd8ce] shadow-md text-black">
+            <Typography
+              noWrap
+              component={Link}
+              to="/"
+              className="flex items-center cursor-pointer pr-6 "
+            >
+              <StoreIcon className="text-[#c9aca6]" />
+              <span className="text-[#845c4c] font-bold">Vav</span>Store
+            </Typography>
 
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
-        <Link to="/Carts">
-          <Badge badgeContent={Object.keys(cartsData).length} color="warning">
-            <LocalGroceryStoreIcon className="text-[#845c4c]" />
-          </Badge>
-        </Link>
-      </Toolbar>
-    </AppBar>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Link to="/Carts">
+              <Badge
+                badgeContent={Object.keys(cartsData).length}
+                color="warning"
+              >
+                <LocalGroceryStoreIcon className="text-[#845c4c]" />
+              </Badge>
+            </Link>
+          </Toolbar>
+        </AppBar>
+      </Container>
+    </div>
   );
 }

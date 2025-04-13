@@ -13,8 +13,8 @@ import { grey } from "@mui/material/colors";
 export default function Pay() {
   const greya = grey[900]; // #f44336
   return (
-    <main className="bg-[#dfd8ce] flex justify-center items-center h-screen">
-      <Card className="max-w-80 max-h-96 bg-[#f2f2f2]">
+    <main className="bg-[#C9B194] flex justify-center items-center h-screen">
+      <Card className="max-w-80 max-h-96 bg-[#FAF1E6]">
         <div  className="font-bold mx-1 text-2xl">
           my account :
         </div>
